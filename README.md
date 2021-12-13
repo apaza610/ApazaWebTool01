@@ -4,3 +4,4 @@ Editable webpage for creating detailed content around video tutorial adds: times
 Limitations:
 1) Latex fails when sent to PHP (on 2nd or 3rd try) so I will use svg, not real editable Latex
 2) source code areas I will also use svg, not real editable code
+3) falla si usas 日本語　(usa $html->saveHTML($html->documentElement) para corregir)
