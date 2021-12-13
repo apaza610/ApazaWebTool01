@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <!-- LaTeX enable block -->
+    <script src="/apz/0code/mathjax/tex-chtml.js" id="MathJax-script" async></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="estiloTool">
+      <button onclick="moverEditor()">▲▼AltZ</button>
+      <button onclick="hacerEditable(this)" style="text-decoration:line-through; color: blue" id="edt">✒️AltX</button>
+      <div>-</div>
+      <input type="text" id="rawHTML" placeholder="any HTML">
+      <button onclick="rawHTMLInsert()">入力</button>
+      <button onclick="inserta3cols()">1 | 2 | 3</button>
+      <div>-</div>
+      <div class="grillaDeA3">
+        <button onclick='darFormato("span","txtColor1")' class="txtColor1">色</button>
+        <button onclick='darFormato("span","txtColor2")' class="txtColor2">色</button>
+        <button onclick='darFormato("span","txtColor3")' class="txtColor3">色</button>
+        <button onclick='darFormato("span","txtFondo1")'><span class="txtFondo1">Fn</span></button>
+        <button onclick='darFormato("span","txtFondo2")'><span class="txtFondo2">Fn</span></button>
+        <button onclick='darFormato("span","txtFondo3")'><span class="txtFondo3">Fn</span></button>
+      </div>
+      <button onclick='darFormato("span","codigo")'><span class="codigo">>codigo;</span></button>
+      <button onclick='darFormato("span","apazammp")'><span class="apazammp">F C</span></button>
+      <div class="grillaDeA2">
+        <button onclick='darFormato("h1")' style="width: 2rem;">h1</button>
+        <button onclick='darFormato("h2")' style="width: 2rem;">h2</button>
+        <button onclick='darFormato("strong")' style="width: 2rem;"><strong>STR</strong></button>
+        <button onclick='darFormato("em")' style="width: 2rem;"><em>EM</em></button>
+      </div>
+      <div>-</div>
+      <button onclick="crearHiperlink()">⚓</button>
+      <input type="text" id="pathEnlace" placeholder="http://godotengine.org/">
+      <button onclick="crearTimeStamp()">⏲️AltC</button>
+      <span class="grillaDeA2">
+        <input type="text" id="miTiempo" placeholder="122">
+        <input type="number" id="miVideo" value="0" min="0">
+      </span>
+      <button onclick="grabarConPHP()">💾CtlS</button>
+    </div>
+    <div class="grupoMultimedia">
+      <video controls><source src="0media/video.mp4" type="video/mp4"><!-- <track src="0media/video.vtt" kind="subtitles" default=""></track>  --></source>    </video>
+      <span class="reloj">999</span>  
+      <div class="areaEditable" id="出力" contenteditable="false">Lesto es <button class="timeMachine" onclick="timeMachine(172, 0)">area0</button> <span class="txtFondo1">seriojejeje</span>        <div class="miFila">          <div class="miClmn">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae turpis eleifend, convallis nisi in, vehicula ligula. Suspendisse sed vestibulum ex, sit <h1>amet placerAAAat</h1> ligula. Vestibulum at hendrerit sapien. In sed magna vitae odio tristique ullamcorper eget nec sem. In lacinia elit ac pellentesque luctus. Donec ac urna odio. Maecenas a arcu elit. Aliquam sodales semper nulla.</div>          <div class="miClmn">Vivamus iaculis urna non nulla interdum vehicula. Maecenas pharetra, nibh consectetur faucibus dapibus, sapien nisl ultricies ipsum, ultrices feugiat velit dolor scelerisque purus. Etiam facilisis <span class="txtFondo1">aliquam rutrum</span>. Integer nec turpis nec metus ornare eleifend nec eu turpis. Proin accumsan, leo sed consequat commodo, tellus sem pharetra nulla, ut pellentesque metus lacus sed mi. Ut <span class="txtColor1">interdum dictum</span> neque. <span class="txtColor3">Phasellus</span> et neque tempor, congue lectus et, vehicula lorem. Orci varius <span class="txtColor2">natoque penatibus</span> et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum aliquet ante quis <span class="txtFondo3">massa</span> vestibulum, at congue purus finibus.</div>          <div class="miClmn">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <h1>Donec vitae</h1> turpis eleifend, convallis nisi in, vehicula ligula. Suspendisse sed vestibulum ex, sit amet placerat ligula. Vestibulum at hendrerit sapien. In sed magna vitae odio tristique ullamcorper eget nec sem. In lacinia elit ac pellentesque luctus. Donec ac urna odio. Maecenas a arcu elit. Aliquam sodales semper nulla.</div>        </div>      </div>
+    </div>
+    <div class="grupoMultimedia">
+      <video controls><source src="0media/video.mp4" type="video/mp4"><!-- <track src="0media/video.vtt" kind="subtitles" default=""></track>  --></source>    </video>
+      <span class="reloj">999</span>  
+      <div class="areaEditable" id="出力" contenteditable="false">esto <img src="/apz/0assets/icons/apz/dcc_blender.svg" class="icono"> es <button class="timeMachine" onclick="timeMachine(234, 1)">AREA51</button> y asi <span class="apazammp">es</span> en <button class="timeMachine" onclick="timeMachine(352, 1)">mi</button> pais <span class="codigo">function(){}</span> es el inicio<img src="/apz/0assets/icons/apz/engine_godot.svg" class="icono"> de mi funcion.<br>        <div class="miFila">          <div class="miClmn">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae turpis eleifend, convallis nisi in, vehicula ligula. Suspendisse sed vestibulum ex, sit amet placerat ligula. Vestibulum at hendrerit sapien. In sed magna vitae odio tristique ullamcorper eget nec sem. In lacinia elit ac pellentesque luctus. Donec ac urna odio. Maecenas a arcu elit. Aliquam sodales semper nulla.</div>          <div class="miClmn">Vivamus iaculis urna non nulla interdum vehicula. Maecenas pharetra, nibh consectetur faucibus dapibus, sapien nisl ultricies ipsum, ultrices feugiat velit dolor scelerisque purus. Etiam facilisis aliquam rutrum. Integer nec turpis nec metus ornare eleifend nec eu turpis. Proin accumsan, leo sed consequat commodo, tellus sem pharetra nulla, ut pellentesque metus lacus sed mi. Ut interdum dictum neque. Phasellus et neque tempor, congue lectus et, vehicula lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum aliquet ante quis massa vestibulum, at congue purus finibus.</div>          <div class="miClmn">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae turpis eleifend, convallis nisi in, vehicula ligula. Suspendisse sed vestibulum ex, sit amet placerat ligula. Vestibulum at hendrerit sapien. In sed magna vitae odio tristique ullamcorper eget nec sem. In lacinia elit ac pellentesque luctus. Donec ac urna odio. Maecenas a arcu elit. Aliquam sodales semper nulla.</div>        </div>      </div>
+    </div>
+    <div class="grupoMultimedia">
+      <video controls><source src="0media/video.mp4" type="video/mp4"><!-- <track src="0media/video.vtt" kind="subtitles" default=""></track>  --></source>    </video>
+      <span class="reloj">999</span>  
+      <div class="areaEditable" id="出力" contenteditable="false"><div>Lesto es <button class="timeMachine" onclick="timeMachine(172, 0)">area0</button> <span class="txtFondo1">seriojejeje</span> y no se mas que <button class="timeMachine" onclick="timeMachine(223, 2)">otra</button> cosa. <br></div><div><div class="miFila"><div class="miClmn">esto esta funcionando bien espero que<br></div><div class="miClmn">no se que es<br></div><div class="miClmn">finalmente sera asi de simple<br></div></div>gracias por su atencion.<br></div></div>
+    </div>
+    <hr>
+	
+    <object type="image/svg+xml" data="0media/explicado.svg" border="1"></object>
+	  <button class="info" onclick="masInfo('0media/explicado.svg')">画</button>
+    <br>
+    <a href="juego1/">🕹️</a>
+    <ruby>部屋<rt>へや</rt></ruby>の中, sabemos \(\color{red}con\) que \(vel \propto \frac{1}{\color{blue}tiempo}\)
+    <img src="0media/godot-logo.png" class="conZoom" width="36">
+    final
+  
+  <script src="principal.js"></script>
+  <script src="editorTool.js"></script>
+  </body>
+</html>
